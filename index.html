@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Joshua Agwatu | Web Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: #f3f4f6;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 75px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #4b5563;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 6px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #111827;
+      border: 1px solid #111827;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 35px;
+    }
+
+    .about p {
+      max-width: 800px;
+      color: #4b5563;
+      font-size: 17px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      background: #f3f4f6;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .projects {
+      background: #f9fafb;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .project-number {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .project a {
+      color: #111827;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .experience-card {
+      border: 1px solid #e5e7eb;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .experience-card p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+    }
+
+    .contact p {
+      max-width: 700px;
+      color: #d1d5db;
+      margin-bottom: 15px;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #374151;
+    }
+
+    @media (max-width: 850px) {
+
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        Joshua Agwatu
+      </div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <h1>
+          Joshua Agwatu<br>
+          <span>Web Developer</span>
+        </h1>
+
+        <p>
+          I am a Computer Science graduate passionate about
+          building responsive websites, web applications and
+          useful digital experiences.
+        </p>
+
+        <a href="#projects" class="btn">
+          View My Projects
+        </a>
+
+        <a href="#contact" class="btn secondary">
+          Contact Me
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          About Me
+        </h2>
+
+        <p>
+          I am a Computer Science graduate with a growing passion
+          for web development and technology. I enjoy turning ideas
+          into functional, responsive and user-friendly digital
+          experiences.
+        </p>
+
+        <div class="skills">
+
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">Git & GitHub</span>
+          <span class="skill">Web Development</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="projects" id="projects">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          My Projects
+        </h2>
+
+        <div class="project-grid">
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 01
+            </div>
+
+            <h3>
+              Joshua Portfolio
+            </h3>
+
+            <p>
+              A personal portfolio website showcasing projects
+              and digital skills.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/joshua-portfolio/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 02
+            </div>
+
+            <h3>
+              Expense Tracker
+            </h3>
+
+            <p>
+              A web application for tracking income and expenses.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/Expense--tracker/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 03
+            </div>
+
+            <h3>
+              Student Result Management System
+            </h3>
+
+            <p>
+              A system for managing and displaying student
+              academic results.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/student-result-management-system/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 04
+            </div>
+
+            <h3>
+              Elite Event Tents
+            </h3>
+
+            <p>
+              A professional event tent and party decoration
+              business website.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/event-tent-decoration/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 05
+            </div>
+
+            <h3>
+              Job Application Tracker
+            </h3>
+
+            <p>
+              A web application for organizing and tracking
+              job applications.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/job-application-tracker/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 06
+            </div>
+
+            <h3>
+              Task Management App
+            </h3>
+
+            <p>
+              A simple application for creating and managing
+              tasks.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/task-management-app/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 07
+            </div>
+
+            <h3>
+              Weather Dashboard
+            </h3>
+
+            <p>
+              A weather dashboard that uses live weather API data.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/weather-dashboard/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 08
+            </div>
+
+            <h3>
+              E-commerce Store
+            </h3>
+
+            <p>
+              A responsive online store with a functional
+              shopping cart.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/ecommerce-store/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 09
+            </div>
+
+            <h3>
+              Social Media Dashboard
+            </h3>
+
+            <p>
+              A dashboard for monitoring social media performance
+              and engagement.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/social-media-dashboard/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">
+              PROJECT 10
+            </div>
+
+            <h3>
+              Nexa Creative Agency
+            </h3>
+
+            <p>
+              A modern responsive website for a fictional
+              digital agency.
+            </p>
+
+            <a
+              href="https://josh14724.github.io/nexa-creative-agency/"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Project →
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section id="experience">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Experience
+        </h2>
+
+        <div class="experience">
+
+
+          <div class="experience-card">
+
+            <h3>
+              Web Development
+            </h3>
+
+            <p>
+              Built and deployed multiple responsive websites
+              and web applications using HTML, CSS, JavaScript
+              and GitHub Pages.
+            </p>
+
+          </div>
+
+
+          <div class="experience-card">
+
+            <h3>
+              Videography
+            </h3>
+
+            <p>
+              Experience working on video production projects,
+              developing creative and technical skills through
+              client and personal projects.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Let's Work Together
+        </h2>
+
+        <p>
+          I am open to opportunities, internships, freelance work
+          and collaborations in technology and web development.
+        </p>
+
+        <p>
+          📧
+          <a href="mailto:joshuaagwatu245@gmail.com">
+            joshuaagwatu245@gmail.com
+          </a>
+        </p>
+
+        <p>
+          📞
+          <a href="tel:07017095926">
+            07017095926
+          </a>
+        </p>
+
+        <p>
+          🔗
+          <a
+            href="https://www.linkedin.com/in/agwatu-joshua-5400952b4"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn Profile
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      © 2026 Joshua Agwatu. All rights reserved.
+    </p>
+
+  </footer>
+
+</body>
+  </html>
